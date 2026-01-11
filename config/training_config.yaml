@@ -1,0 +1,50 @@
+# Training Configuration
+
+model:
+  name: "Salesforce/blip-image-captioning-base"
+  max_length: 256
+  image_size: 384
+
+data:
+  train_csv: "data/train_data.csv"
+  val_csv: "data/val_data.csv"
+  test_csv: "data/test_data.csv"
+  image_dir: "data/images/"
+
+training:
+  batch_size: 32
+  num_epochs: 20
+  learning_rate: 5.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  gradient_accumulation_steps: 1
+  max_grad_norm: 1.0
+  patience: 5
+  min_improvement: 0.001
+  eval_every_n_epochs: 1
+  save_best_only: true
+
+generation:
+  num_beams: 4
+  max_length: 256
+  min_length: 20
+  temperature: 1.0
+  top_p: 0.9
+  repetition_penalty: 1.2
+
+hardware:
+  device: "cuda"
+  num_workers: 2
+  pin_memory: true
+  use_fp16: true
+
+logging:
+  output_dir: "outputs/"
+  checkpoint_dir: "checkpoints/"
+  log_every: 10
+  save_every: 500
+
+evaluation:
+  compute_bleu: true
+  compute_rouge: true
+  compute_bertscore: false
