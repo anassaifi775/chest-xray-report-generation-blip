@@ -39,7 +39,7 @@ Impression: Cardiomegaly, Pleural effusion.
 
 ## 🚀 Quick Start
 
-### Option 1: Google Colab (Recommended)
+### Option 1: Google Colab
 
 1. Open notebook in Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yourusername/chest-xray-report-generation-blip/blob/main/notebooks/BLIP_Training.ipynb)
 2. Select GPU runtime
